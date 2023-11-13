@@ -12,7 +12,7 @@ function nav_without_user()
 {
 ?>
     <nav>
-        <a href="#">Tecno-Total1</a>
+        <a href="#">Tecno-Total</a>
         <ul>
             <li><a href="index.php">Inicio</a></li>
             <li><a href="#">Carrito(0)</a></li>
