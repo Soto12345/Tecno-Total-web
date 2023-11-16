@@ -1,6 +1,8 @@
 <?php
 require('models/products/products.php');
 require('models/auth/components.php');
+require('models/products/category.php');
+require('models/products/details.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,12 +16,18 @@ require('models/auth/components.php');
 <body>
   <header>
     <?php
-      user_verification();
+    user_verification();
     ?>
   </header>
   <main>
     <?php
-    browse_products();
+    if (isset($_GET['Categoria']) && isset($_GET['Token'])) {
+      category();
+    } else if (isset($_GET['Id']) && isset($_GET['Token'])) {
+      details();
+    } else {
+      browse_products();
+    }
     ?>
   </main>
 </body>
