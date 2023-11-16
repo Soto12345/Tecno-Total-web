@@ -1,6 +1,5 @@
 <?php
 require('C:/xampp/htdocs/Tecno-Total-web/models/conf/connection.php');
-
 class Product_DB
 {
     //atributos
@@ -65,7 +64,7 @@ function browse_products()
             $product_category = $row['categoria'];
             $product_price = $row['precio'];
             $product_stock = $row['Stock'];
-//cada vez que recorre un arreglo, los productos estaran en formato html
+            //cada vez que recorre un arreglo, los productos estaran en formato html
 ?>
             <div>
                 <h2><?php echo $product_id ?></h2>
@@ -75,6 +74,7 @@ function browse_products()
                 <p><?php echo $product_category ?></p>
                 <p><?php echo $product_price ?></p>
                 <p><?php echo $product_stock ?></p>
+                <a href="index.php?Id=<?php echo $product_id; ?>&Token=<?php echo hash_hmac('sha256', $product_id, KEY_TOKEN); ?>">Detalles</a>
             </div>
 <?php
         }

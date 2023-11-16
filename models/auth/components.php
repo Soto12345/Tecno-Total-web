@@ -5,9 +5,14 @@ function user_verification()
     if (!isset($_SESSION['usuario'])) {
         nav_without_user();
     } else {
-        nav_with_user();
+        if ($_SESSION['Tipo_usuario'] == 1) {
+            nav_with_user();
+        } else {
+            nav_administrator();
+        }
     }
 }
+
 function nav_without_user()
 {
 ?>
@@ -22,24 +27,24 @@ function nav_without_user()
                     <li>
                         <a href="#">almacenamiento</a>
                         <ul>
-                            <li><a href="#">HDD</a></li>
-                            <li><a href="#">SSD</a></li>
+                            <li><a href="index.php?Categoria=<?php echo "almacenamiento.hdd"; ?>&Token=<?php echo hash_hmac('sha256', 'almacenamiento.hdd', KEY_TOKEN); ?>">HDD</a></li>
+                            <li><a href="index.php?Categoria=<?php echo "almacenamiento.ssd"; ?>&Token=<?php echo hash_hmac('sha256', 'almacenamiento.ssd', KEY_TOKEN); ?>">SSD</a></li>
                         </ul>
                     </li>
                     <li>
                         <a href="#">componentes</a>
                         <ul>
-                            <li><a href="#">graficas</a></li>
-                            <li><a href="#">ram</a></li>
-                            <li><a href="#">motherboards</a></li>
+                            <li><a href="index.php?Categoria=<?php echo "componentes.grafica"; ?>&Token=<?php echo hash_hmac('sha256', 'componentes.grafica', KEY_TOKEN); ?>">graficas</a></li>
+                            <li><a href="index.php?Categoria=<?php echo "componentes.ram"; ?>&Token=<?php echo hash_hmac('sha256', 'componentes.ram', KEY_TOKEN); ?>">ram</a></li>
+                            <li><a href="index.php?Categoria=<?php echo "componentes.motherboard"; ?>&Token=<?php echo hash_hmac('sha256', 'componentes.motherboard', KEY_TOKEN); ?>">motherboards</a></li>
                         </ul>
                     </li>
                     <li>
                         <a href="#">Dispositivos externos</a>
                         <ul>
-                            <li><a href="#">Teclados</a></li>
-                            <li><a href="#">Monitor</a></li>
-                            <li><a href="#">Mouse</a></li>
+                            <li><a href="index.php?Categoria=<?php echo "dispositivos.teclado"; ?>&Token=<?php echo hash_hmac('sha256', 'dispositivos.teclado', KEY_TOKEN); ?>">Teclados</a></li>
+                            <li><a href="index.php?Categoria=<?php echo "dispositivos.monitor"; ?>&Token=<?php echo hash_hmac('sha256', 'dispositivos.monitor', KEY_TOKEN); ?>">Monitor</a></li>
+                            <li><a href="index.php?Categoria=<?php echo "dispositivos.mouse"; ?>&Token=<?php echo hash_hmac('sha256', 'dispositivos.mouse', KEY_TOKEN); ?>">Mouse</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -62,7 +67,7 @@ function nav_with_user()
     <nav>
         <a href="#">Tecno-Total</a>
         <ul>
-            <li><a href="index_user.php">Inicio</a></li>
+            <li><a href="index.php">Inicio</a></li>
             <li><a href="#">Carrito(0)</a></li>
             <li>
                 <a href="#">Categoria</a>
@@ -70,24 +75,24 @@ function nav_with_user()
                     <li>
                         <a href="#">almacenamiento</a>
                         <ul>
-                            <li><a href="#">HDD</a></li>
-                            <li><a href="#">SSD</a></li>
+                            <li><a href="index.php?Categoria=<?php echo "almacenamiento.hdd"; ?>&Token=<?php echo hash_hmac('sha256', 'almacenamiento.hdd', KEY_TOKEN); ?>">HDD</a></li>
+                            <li><a href="index.php?Categoria=<?php echo "almacenamiento.ssd"; ?>&Token=<?php echo hash_hmac('sha256', 'almacenamiento.ssd', KEY_TOKEN); ?>">SSD</a></li>
                         </ul>
                     </li>
                     <li>
                         <a href="#">componentes</a>
                         <ul>
-                            <li><a href="#">graficas</a></li>
-                            <li><a href="#">ram</a></li>
-                            <li><a href="#">motherboards</a></li>
+                            <li><a href="index.php?Categoria=<?php echo "componentes.grafica"; ?>&Token=<?php echo hash_hmac('sha256', 'componentes.grafica', KEY_TOKEN); ?>">graficas</a></li>
+                            <li><a href="index.php?Categoria=<?php echo "componentes.ram"; ?>&Token=<?php echo hash_hmac('sha256', 'componentes.ram', KEY_TOKEN); ?>">ram</a></li>
+                            <li><a href="index.php?Categoria=<?php echo "componentes.motherboard"; ?>&Token=<?php echo hash_hmac('sha256', 'componentes.motherboard', KEY_TOKEN); ?>">motherboards</a></li>
                         </ul>
                     </li>
                     <li>
                         <a href="#">Dispositivos externos</a>
                         <ul>
-                            <li><a href="#">Teclados</a></li>
-                            <li><a href="#">Monitor</a></li>
-                            <li><a href="#">Mouse</a></li>
+                            <li><a href="index.php?Categoria=<?php echo "dispositivos.teclado"; ?>&Token=<?php echo hash_hmac('sha256', 'dispositivos.teclado', KEY_TOKEN); ?>">Teclados</a></li>
+                            <li><a href="index.php?Categoria=<?php echo "dispositivos.monitor"; ?>&Token=<?php echo hash_hmac('sha256', 'dispositivos.monitor', KEY_TOKEN); ?>">Monitor</a></li>
+                            <li><a href="index.php?Categoria=<?php echo "dispositivos.mouse"; ?>&Token=<?php echo hash_hmac('sha256', 'dispositivos.mouse', KEY_TOKEN); ?>">Mouse</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -102,37 +107,37 @@ function nav_with_user()
     </nav>
 <?php
 }
-function nav_administrator(){
-    ?>
+function nav_administrator()
+{
+?>
     <nav>
         <a href="#">Tecno-Total</a>
         <ul>
-            <li><a href="index_user.php">Inicio</a></li>
+            <li><a href="index.php">Inicio</a></li>
             <li>
                 <a href="#">Categoria</a>
                 <ul>
                     <li>
                         <a href="#">almacenamiento</a>
                         <ul>
-                            <li><a href="#">HDD</a></li>
-                            <li><a href="#">SSD</a></li>
+                            <li><a href="index.php?Categoria=<?php echo "almacenamiento.hdd"; ?>&Token=<?php echo hash_hmac('sha256', 'almacenamiento.hdd', KEY_TOKEN); ?>">HDD</a></li>
+                            <li><a href="index.php?Categoria=<?php echo "almacenamiento.ssd"; ?>&Token=<?php echo hash_hmac('sha256', 'almacenamiento.ssd', KEY_TOKEN); ?>">SSD</a></li>
                         </ul>
                     </li>
                     <li>
                         <a href="#">componentes</a>
                         <ul>
-                            <li><a href="#">graficas</a></li>
-                            <li><a href="#">ram</a></li>
-                            <li><a href="#">motherboards</a></li>
+                            <li><a href="index.php?Categoria=<?php echo "componentes.grafica"; ?>&Token=<?php echo hash_hmac('sha256', 'componentes.grafica', KEY_TOKEN); ?>">graficas</a></li>
+                            <li><a href="index.php?Categoria=<?php echo "componentes.ram"; ?>&Token=<?php echo hash_hmac('sha256', 'componentes.ram', KEY_TOKEN); ?>">ram</a></li>
+                            <li><a href="index.php?Categoria=<?php echo "componentes.motherboard"; ?>&Token=<?php echo hash_hmac('sha256', 'componentes.motherboard', KEY_TOKEN); ?>">motherboards</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="#">Gestion de pedidos</a>
+                        <a href="#">Dispositivos externos</a>
                         <ul>
-                            <li><a href="#">Agregar</a></li>
-                            <li><a href="#">Borrar</a></li>
-                            <li><a href="#">Modificar</a></li>
-                            <li><a href="#">Historial de pedidos</a></li>
+                            <li><a href="index.php?Categoria=<?php echo "dispositivos.teclado"; ?>&Token=<?php echo hash_hmac('sha256', 'dispositivos.teclado', KEY_TOKEN); ?>">Teclados</a></li>
+                            <li><a href="index.php?Categoria=<?php echo "dispositivos.monitor"; ?>&Token=<?php echo hash_hmac('sha256', 'dispositivos.monitor', KEY_TOKEN); ?>">Monitor</a></li>
+                            <li><a href="index.php?Categoria=<?php echo "dispositivos.mouse"; ?>&Token=<?php echo hash_hmac('sha256', 'dispositivos.mouse', KEY_TOKEN); ?>">Mouse</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -145,6 +150,6 @@ function nav_administrator(){
             </li>
         </ul>
     </nav>
-    <?php
+<?php
 }
 ?>

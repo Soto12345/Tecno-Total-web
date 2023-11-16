@@ -65,18 +65,20 @@ function login_user($email_user, $password_user)
 {
     global $connection;
     //extraer la contraseña del usuario encriptado
-    $sql_encrypted_password = "SELECT contrasena FROM usuario WHERE correo='$email_user'";
+    $sql_encrypted_password = "SELECT contrasena,Tipo_usuario FROM usuario WHERE correo='$email_user'";
     $result = $connection->run_query($sql_encrypted_password);
     //verifica si la solicitud a la base de datos fue enviado con exito
     if ($result) {
-        $row_password = $result->fetch_assoc();
+        $row = $result->fetch_assoc();
         //verifica que si hay un correo que esta solicitando por el usuario
-        if ($row_password !== NULL && isset($row_password['contrasena'])) {
-            $password_database = $row_password['contrasena'];
+        if ($row !== NULL && isset($row['contrasena'])) {
+            $password_database = $row['contrasena'];
+            $type_user = $row['Tipo_usuario'];
             //verifica y desencripta la contraseña y compara si son iguales o no
             if (Verify_password($password_user, $password_database)) {
                 session_start();
                 $_SESSION['usuario'] = $email_user;
+                $_SESSION['Tipo_usuario'] = $type_user;
                 header("location: ../../index.php");
             } else {
                 echo "usuario o contraseña incorrecta";
