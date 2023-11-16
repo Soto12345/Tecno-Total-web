@@ -47,8 +47,8 @@ function nav_without_user()
             <li>
                 <a href="#">Iniciar sesion</a>
                 <ul>
-                    <li><a href="login.html">Iniciar sesion</a></li>
-                    <li><a href="Register.html">Registrarse</a></li>
+                    <li><a href="models/forms/login.html">Iniciar sesion</a></li>
+                    <li><a href="models/forms/Register.html">Registrarse</a></li>
                 </ul>
             </li>
         </ul>
@@ -102,5 +102,49 @@ function nav_with_user()
     </nav>
 <?php
 }
-
+function nav_administrator(){
+    ?>
+    <nav>
+        <a href="#">Tecno-Total</a>
+        <ul>
+            <li><a href="index_user.php">Inicio</a></li>
+            <li>
+                <a href="#">Categoria</a>
+                <ul>
+                    <li>
+                        <a href="#">almacenamiento</a>
+                        <ul>
+                            <li><a href="#">HDD</a></li>
+                            <li><a href="#">SSD</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">componentes</a>
+                        <ul>
+                            <li><a href="#">graficas</a></li>
+                            <li><a href="#">ram</a></li>
+                            <li><a href="#">motherboards</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Gestion de pedidos</a>
+                        <ul>
+                            <li><a href="#">Agregar</a></li>
+                            <li><a href="#">Borrar</a></li>
+                            <li><a href="#">Modificar</a></li>
+                            <li><a href="#">Historial de pedidos</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Administrador:<?php echo $_SESSION['usuario'] ?></a>
+                <ul>
+                    <li><a href="models/user/sign_off.php">Cerrar sesion</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <?php
+}
 ?>
