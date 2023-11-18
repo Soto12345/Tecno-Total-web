@@ -1,4 +1,6 @@
 <?php
+require('models/conf/cart_configuration.php');
+require('models/shooping_cart/cart_process.php');
 function details()
 {
     $id = isset($_GET['Id']) ? $_GET['Id'] : '';
@@ -36,19 +38,31 @@ function details()
                     <?php
                     if (!isset($_SESSION['usuario'])) {
                     ?>
-                        <form action="">
-                            <button>AGREGAR</button>
+                        <form action="" method="post">
+                            <input type="hidden" name="product_id" id="product_id" value="<?php echo openssl_encrypt($product_id, COD, KEY_CARRITO); ?>">
+                            <input type="hidden" name="product_name" id="product_name" value="<?php echo openssl_encrypt($product_name, COD, KEY_CARRITO); ?>">
+                            <input type="hidden" name="product_price" id="product_price" value="<?php echo openssl_encrypt($product_price, COD, KEY_CARRITO); ?>">
+                            <input type="hidden" name="product_image" id="product_image" value="<?php echo openssl_encrypt($product_image, COD, KEY_CARRITO); ?>">
+                            <input type="hidden" name="product_category" id="product_category" value="<?php echo openssl_encrypt($product_category, COD, KEY_CARRITO); ?>">
+                            <input type="hidden" name="product_stock" id="product_stock" value="<?php echo 1 ?>">
+                            <button type="submit" name="btn_accion" value="AGREGAR">AGREGAR</button>
                         </form>
-                    <?php
-                            } else {
-                                if ($_SESSION['Tipo_usuario'] == 1) {
-                    ?>
-                            <form action="">
-                                <button>AGREGAR</button>
+                        <?php
+                    } else {
+                        if ($_SESSION['Tipo_usuario'] == 1) {
+                        ?>
+                            <form action="" method="post">
+                                <input type="hidden" name="product_id" id="product_id" value="<?php echo openssl_encrypt($product_id, COD, KEY_CARRITO); ?>">
+                                <input type="hidden" name="product_name" id="product_name" value="<?php echo openssl_encrypt($product_name, COD, KEY_CARRITO); ?>">
+                                <input type="hidden" name="product_price" id="product_price" value="<?php echo openssl_encrypt($product_price, COD, KEY_CARRITO); ?>">
+                                <input type="hidden" name="product_image" id="product_image" value="<?php echo openssl_encrypt($product_image, COD, KEY_CARRITO); ?>">
+                                <input type="hidden" name="product_category" id="product_category" value="<?php echo openssl_encrypt($product_category, COD, KEY_CARRITO); ?>">
+                                <input type="hidden" name="product_stock" id="product_stock" value="<?php echo 1 ?>">
+                                <button type="submit" name="btn_accion" value="AGREGAR">AGREGAR</button>
                             </form>
                     <?php
-                                }
-                            }
+                        }
+                    }
                     ?>
                 </div>
 <?php

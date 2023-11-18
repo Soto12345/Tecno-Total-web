@@ -1,4 +1,6 @@
 <?php
+session_start();
+require('models/shooping_cart/cart.php');
 require('models/products/products.php');
 require('models/auth/components.php');
 require('models/products/category.php');
@@ -25,7 +27,9 @@ require('models/products/details.php');
       category();
     } else if (isset($_GET['Id']) && isset($_GET['Token'])) {
       details();
-    } else {
+    } else if(isset($_GET['Cart'])){
+      list_cart();
+    }else{
       browse_products();
     }
     ?>

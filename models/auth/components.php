@@ -1,7 +1,7 @@
 <?php
 function user_verification()
 {
-    session_start();
+   
     if (!isset($_SESSION['usuario'])) {
         nav_without_user();
     } else {
@@ -20,7 +20,7 @@ function nav_without_user()
         <a href="#">Tecno-Total</a>
         <ul>
             <li><a href="index.php">Inicio</a></li>
-            <li><a href="#">Carrito(0)</a></li>
+            <li><a href="index.php?Cart=yes">Carrito(<?php echo (empty($_SESSION['CART']))?0:count($_SESSION['CART']);?>)</a></li>
             <li>
                 <a href="#">Categoria</a>
                 <ul>
@@ -68,7 +68,7 @@ function nav_with_user()
         <a href="#">Tecno-Total</a>
         <ul>
             <li><a href="index.php">Inicio</a></li>
-            <li><a href="#">Carrito(0)</a></li>
+            <li><a href="index.php?Cart=yes">Carrito(<?php echo (empty($_SESSION['CART']))?0:count($_SESSION['CART']);?>)</a></li>
             <li>
                 <a href="#">Categoria</a>
                 <ul>
