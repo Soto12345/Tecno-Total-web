@@ -7,6 +7,12 @@ require('models/auth/components.php');
 require('models/products/category.php');
 require('models/products/details.php');
 require('models/pay/pay.php');
+require('models/products/process_product.php');
+require('models/products/add_products.php');
+require('models/products/modify_products.php');
+require('models/products/delete_products.php');
+require('models/pay/pay_history.php');
+require('models/user/purchase_history.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,6 +43,16 @@ require('models/pay/pay.php');
       pay();
     } else if(isset($_GET['cart_off'])){
       sign_off_cart();
+    }else if(isset($_GET['add'])){
+      add_products();
+    }else if(isset($_GET['delete'])){
+      delete_product();
+    }else if(isset($_GET['update'])){
+      update_product();
+    }else if(isset($_GET['administrator_history'])){
+      pay_history_administrator();
+    }else if(isset($_GET['purchase_history'])){
+      purchase_history();
     }else{
       browse_products();
     }
