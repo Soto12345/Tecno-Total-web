@@ -1,19 +1,62 @@
+<!--Librerias necesarias de boostrap-->
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 <!DOCTYPE html>
 <html lang="en">
+  <!--Aqui esta el head-->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registro</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="\css\login.css">
   </head>
+  <!--Aqui esta el body-->
   <body>
-    <h1>Formulario de registro</h1>
-    <form action="../user/register.php" method="post">
-      <label for="email_user">Correo electronico:</label>
-      <input type="email" name="email_user" id="email_user" required />
-      <label for="password_user">Contraseña:</label>
-      <input type="password" name="password_user" id="password_user" required />
-      <button type="submit">Registrar</button>
-      <a href="login.html">¿Ya tienes cuenta? Dale click aqui</a>
-    </form>
+    <div class="container">
+      <div class="d-flex justify-content-center h-100">
+        <div class="card">
+          <div class="card-header">
+            <h3>Registrate</h3>
+              <div class="d-flex justify-content-end social_icon">
+                <span><i class="fab fa-google-plus-square"></i></span>
+                  </div>
+              </div>
+              <div class="card-body">
+                <!--Aqui esta el Form-->
+                  <form action="../user/register.php" method="post">
+                    <!--Aqui empieza la parte del correo-->
+                    <div class="input-group form-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                      </div>
+                        <input type="email" name="email_user" id="email_user" class="form-control" placeholder="Correo Electronico" required >
+                    </div>
+                    <!--Aqui empieza la parte de la contraseña-->
+                        <div class="input-group form-group">
+                          <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="fas fa-key"></i></span>
+                          </div>
+                          <input type="password" name="password_user" id="password_user" class="form-control " placeholder="Contraseña" required>
+                        </div>
+                        <br>
+                        <!--Aqui esta el boton del Chackin-->
+                        <div class="form-group">
+                            <input type="submit" value="Checkin" class="btn float-right login_btn">
+                        </div>
+                  </form>
+              </div>
+              <!--Aqui esta el footer de la card-->
+              <div class="card-footer">
+                  <div class="d-flex justify-content-center links">
+                      Ya tienes una cuenta?<a href="login.html">Inicia Sesion Aqui</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
   </body>
 </html>
