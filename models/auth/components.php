@@ -1,7 +1,7 @@
 <?php
 function user_verification()
 {
-   
+
     if (!isset($_SESSION['usuario'])) {
         nav_without_user();
     } else {
@@ -20,7 +20,7 @@ function nav_without_user()
         <a href="#">Tecno-Total</a>
         <ul>
             <li><a href="index.php">Inicio</a></li>
-            <li><a href="index.php?Cart=yes">Carrito(<?php echo (empty($_SESSION['CART']))?0:count($_SESSION['CART']);?>)</a></li>
+            <li><a href="index.php?Cart=yes">Carrito(<?php echo (empty($_SESSION['CART'])) ? 0 : count($_SESSION['CART']); ?>)</a></li>
             <li>
                 <a href="#">Categoria</a>
                 <ul>
@@ -68,7 +68,7 @@ function nav_with_user()
         <a href="#">Tecno-Total</a>
         <ul>
             <li><a href="index.php">Inicio</a></li>
-            <li><a href="index.php?Cart=yes">Carrito(<?php echo (empty($_SESSION['CART']))?0:count($_SESSION['CART']);?>)</a></li>
+            <li><a href="index.php?Cart=yes">Carrito(<?php echo (empty($_SESSION['CART'])) ? 0 : count($_SESSION['CART']); ?>)</a></li>
             <li>
                 <a href="#">Categoria</a>
                 <ul>
@@ -101,6 +101,7 @@ function nav_with_user()
                 <a href="#"><?php echo $_SESSION['usuario'] ?></a>
                 <ul>
                     <li><a href="models/user/sign_off.php">Cerrar sesion</a></li>
+                    <li><a href="index.php?purchase_history=yes">Historial de compras</a></li>
                 </ul>
             </li>
         </ul>
@@ -146,6 +147,10 @@ function nav_administrator()
                 <a href="#">Administrador:<?php echo $_SESSION['usuario'] ?></a>
                 <ul>
                     <li><a href="models/user/sign_off.php">Cerrar sesion</a></li>
+                    <li><a href="index.php?add=yes">Agregar</a></li>
+                    <li><a href="index.php?delete=yes">Borrar</a></li>
+                    <li> <a href="index.php?update=yes">Modificar</a></li>
+                    <li><a href="index.php?administrator_history=yes">Historial Pedidos</a></li>
                 </ul>
             </li>
         </ul>
