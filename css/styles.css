@@ -33,7 +33,7 @@ body{
     border-bottom: 0.5px solid rgba(0, 0, 0, 0.05);
 }
 
-/*ESTA COSA ES PARA ACOMODAR LAS COLUMNAS DE LOS PRODUCTOS*/
+/*ESTA COSA ES PARA ACOMODAR LAS COLUMNAS DE LOS PRODUCTOS (Esto tambien esta en categorias)*/
 .col-md-3 {
     display: block;
     margin-top: 25px;

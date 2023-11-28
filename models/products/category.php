@@ -24,17 +24,20 @@ function category()
                     $product_stock = $row['Stock'];
                     //cada vez que recorre un arreglo, los productos estaran en formato html
 ?>
-                    <div class="container mt-4">
-                        <h1>Resultados:</h1>
-                        <h2><?php echo $product_id ?></h2>
-                        <h3><?php echo $product_name ?></h3>
-                        <img src="<?php echo $product_image ?>" width="100" height="100" class="img-fluid" alt="<?php echo $product_name ?>">
-                        <p><?php echo $product_description ?></p>
-                        <p><?php echo $product_category ?></p>
-                        <p><?php echo $product_price ?></p>
-                        <p><?php echo $product_stock ?></p>
-                        <a href="index.php?Id=<?php echo $product_id; ?>&Token=<?php echo hash_hmac('sha256', $product_id, KEY_TOKEN); ?>" class="btn btn-primary">Detalles</a>
-                    </div>  
+
+<div class="col-md-3">
+    <div class="card">
+        <h3 class="card-title"><?php echo $product_name ?></h3>
+        <img class="img-fluid" src="<?php echo $product_image ?>">
+        <div class="card-body" >
+            <p class="card-text"><?php echo $product_description ?></p>
+            <p class = "card-text">Stock: <?php echo $product_stock?></p>
+            <h5>Precio: $<?php echo $product_price ?></h5>
+            <button style="background-color:black" class="btn"><a style="text-decoration:none" href="index.php?Id=<?php echo $product_id; ?>&Token=<?php echo hash_hmac('sha256', $product_id, KEY_TOKEN); ?>">Detalles</a></button>
+        </div>
+    </div>
+</div>
+
 <?php
                 }
             }
