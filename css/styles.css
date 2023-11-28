@@ -49,11 +49,25 @@ body{
     width: 120px;
 }
 .btn-primary:hover{
-    background-color: black;
+    background-color: rgb(11, 11, 11);
     border: none;
 }
 h3,h5{
-    color: rgb(9, 85, 238);
+    color: rgb(88, 14, 67);
 }
 
 /*Hacer pagina de detalles*/
+
+.card {
+    text-align: center;
+    position: relative;
+    width: 330px;
+    height: 440px;
+    background: #e9e5e5;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.flex-container{
+    display: flex;
+}

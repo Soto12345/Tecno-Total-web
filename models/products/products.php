@@ -68,10 +68,10 @@ function browse_products()
 ?>
 
 
-<!--TODO: Tratar de poner bien las cards-->
-<div class="container py-1">
-    <div class="col">
-        <div class="card">
+<!--TODO: Tratar de acomodar bien las cards-->
+
+    <div class="col-sm-6">
+        <div class="card" style="width: 18rem;">
             <br>
             <h3 class="card-title"><?php echo $product_name ?></h3>
             <img src="<?php echo $product_image ?>" width="150" height="150" >
@@ -81,13 +81,13 @@ function browse_products()
                 </div>
                 <div class="mb-1 d-flex justify-content-around">
                     <h5>Precio: $<?php echo $product_price ?></h5>
-                    <br>
-                    <button class="btn btn-primary"><a href="index.php?Id=<?php echo $product_id; ?>&Token=<?php echo hash_hmac('sha256', $product_id, KEY_TOKEN); ?>">Detalles</a></button>
+                    
+                    <button class="btn btn-info"><a href="index.php?Id=<?php echo $product_id; ?>&Token=<?php echo hash_hmac('sha256', $product_id, KEY_TOKEN); ?>">Detalles</a></button>
                 </div>
         </div>
     </div>
     <br>
-</div>
+
 
 <?php
         }
