@@ -31,7 +31,8 @@ require('models/user/purchase_history.php');
   <!-- Replace the "test" client-id value with your client-id -->
   <script src="https://www.paypal.com/sdk/js?client-id=ARaJ_-lZ2bImQWLMJIrYbZu5_n1Vf0uF6ClGgqduTPpf3uRk3NqMH-BU94qh1DQG1a06xZb6fPQt7RDF&currency=MXN"></script>
   <!--Link hacia los css correspondientes-->
-  <link rel="stylesheet" href="css\component.css">  
+  <link rel="stylesheet" href="css\component.css"> 
+  <link rel="stylesheet" href="css\product.css"> 
   <title>Tecno-Total</title>
 </head>
 
