@@ -67,6 +67,8 @@ function browse_products()
             //cada vez que recorre un arreglo, los productos estaran en formato html
 ?>
 
+
+<!--TODO: Tratar de poner bien las productCards-->
 <div class="container py-1">
     <div class="col">
         <div class="card">

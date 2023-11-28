@@ -28,13 +28,12 @@ require('models/user/purchase_history.php');
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <link rel = "stylesheet" href = "bootstrap-5.0.2-dist/css/bootstrap.min.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <!-- Replace the "test" client-id value with your client-id -->
   <script src="https://www.paypal.com/sdk/js?client-id=ARaJ_-lZ2bImQWLMJIrYbZu5_n1Vf0uF6ClGgqduTPpf3uRk3NqMH-BU94qh1DQG1a06xZb6fPQt7RDF&currency=MXN"></script>
   <!--Link hacia los css correspondientes-->
-  <link rel="stylesheet" href="css\component.css"> 
-  <link rel="stylesheet" href="css\product.css"> 
+  
+  <link rel="stylesheet" href="css\styles.css"> 
   <title>Tecno-Total</title>
 </head>
 

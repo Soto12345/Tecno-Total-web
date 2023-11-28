@@ -27,44 +27,48 @@ function details()
                 $product_stock = $row['Stock'];
                 $product_category = $row['categoria'];
 ?>
-                <div>
-                    <h2><?php echo $product_id ?></h2>
-                    <h3><?php echo $product_name ?></h3>
-                    <img src="<?php echo $product_image ?>" width="100" height="100">
-                    <p><?php echo $product_description ?></p>
-                    <p><?php echo $product_category ?></p>
-                    <p><?php echo $product_price ?></p>
-                    <p><?php echo $product_stock ?></p>
-                    <?php
-                    if (!isset($_SESSION['usuario'])) {
-                    ?>
-                        <form action="" method="post">
-                            <input type="hidden" name="product_id" id="product_id" value="<?php echo openssl_encrypt($product_id, COD, KEY_CARRITO); ?>">
-                            <input type="hidden" name="product_name" id="product_name" value="<?php echo openssl_encrypt($product_name, COD, KEY_CARRITO); ?>">
-                            <input type="hidden" name="product_price" id="product_price" value="<?php echo openssl_encrypt($product_price, COD, KEY_CARRITO); ?>">
-                            <input type="hidden" name="product_image" id="product_image" value="<?php echo openssl_encrypt($product_image, COD, KEY_CARRITO); ?>">
-                            <input type="hidden" name="product_category" id="product_category" value="<?php echo openssl_encrypt($product_category, COD, KEY_CARRITO); ?>">
-                            <input type="hidden" name="product_stock" id="product_stock" value="<?php echo 1 ?>">
-                            <button type="submit" name="btn_accion" value="AGREGAR">AGREGAR</button>
-                        </form>
-                        <?php
-                    } else {
-                        if ($_SESSION['Tipo_usuario'] == 1) {
-                        ?>
-                            <form action="" method="post">
-                                <input type="hidden" name="product_id" id="product_id" value="<?php echo openssl_encrypt($product_id, COD, KEY_CARRITO); ?>">
-                                <input type="hidden" name="product_name" id="product_name" value="<?php echo openssl_encrypt($product_name, COD, KEY_CARRITO); ?>">
-                                <input type="hidden" name="product_price" id="product_price" value="<?php echo openssl_encrypt($product_price, COD, KEY_CARRITO); ?>">
-                                <input type="hidden" name="product_image" id="product_image" value="<?php echo openssl_encrypt($product_image, COD, KEY_CARRITO); ?>">
-                                <input type="hidden" name="product_category" id="product_category" value="<?php echo openssl_encrypt($product_category, COD, KEY_CARRITO); ?>">
-                                <input type="hidden" name="product_stock" id="product_stock" value="<?php echo 1 ?>">
-                                <button type="submit" name="btn_accion" value="AGREGAR">AGREGAR</button>
-                            </form>
-                    <?php
-                        }
-                    }
-                    ?>
-                </div>
+
+                <!--Aqui esta la parte de los detalles en HTML-->
+                <div class="container mt-4">
+    <div class="card">
+        <div class="card-body">
+            <h2 class="card-subtitle mb-2 text-muted"><?php echo $product_name ?></h2>
+            <h5 class="card-title">ID producto: <?php echo $product_id ?></h5>
+            <img src="<?php echo $product_image ?> " width="150" height="150" class="img-fluid" alt="<?php echo $product_name  ?>  ">
+            <p class="card-text"><?php echo $product_description ?></p>
+            <p class="card-text"><strong>Category:</strong> <?php echo $product_category ?></p>
+            <p class="card-text"><strong>Price:</strong> <?php echo $product_price ?></p>
+            <p class="card-text"><strong>Stock:</strong> <?php echo $product_stock ?></p>
+
+            <?php if (!isset($_SESSION['usuario'])) { ?>
+                <form action="" method="post">
+                    <input type="hidden" name="product_id" value="<?php echo openssl_encrypt($product_id, COD, KEY_CARRITO); ?>">
+                    <input type="hidden" name="product_name" value="<?php echo openssl_encrypt($product_name, COD, KEY_CARRITO); ?>">
+                    <input type="hidden" name="product_price" value="<?php echo openssl_encrypt($product_price, COD, KEY_CARRITO); ?>">
+                    <input type="hidden" name="product_image" value="<?php echo openssl_encrypt($product_image, COD, KEY_CARRITO); ?>">
+                    <input type="hidden" name="product_category" value="<?php echo openssl_encrypt($product_category, COD, KEY_CARRITO); ?>">
+                    <input type="hidden" name="product_stock" value="1">
+                    <button type="submit" class="btn btn-primary" name="btn_accion" value="AGREGAR">Comprar</button>
+                </form>
+            <?php } else {
+                if ($_SESSION['Tipo_usuario'] == 1) { ?>
+                    <form action="" method="post">
+                        <input type="hidden" name="product_id" value="<?php echo openssl_encrypt($product_id, COD, KEY_CARRITO); ?>">
+                        <input type="hidden" name="product_name" value="<?php echo openssl_encrypt($product_name, COD, KEY_CARRITO); ?>">
+                        <input type="hidden" name="product_price" value="<?php echo openssl_encrypt($product_price, COD, KEY_CARRITO); ?>">
+                        <input type="hidden" name="product_image" value="<?php echo openssl_encrypt($product_image, COD, KEY_CARRITO); ?>">
+                        <input type="hidden" name="product_category" value="<?php echo openssl_encrypt($product_category, COD, KEY_CARRITO); ?>">
+                        <input type="hidden" name="product_stock" value="1">
+                        <button type="submit" class="btn btn-primary" name="btn_accion" value="AGREGAR">Comprar</button>
+                    </form>
+            <?php }
+            } ?>
+        </div>
+    </div>
+</div>
+
+
+
 <?php
             } else {
                 echo "producto no encontrado";
