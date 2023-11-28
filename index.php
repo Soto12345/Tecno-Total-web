@@ -27,18 +27,18 @@ require('models/user/purchase_history.php');
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  <link rel = "stylesheet" href = "bootstrap-5.0.2-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <!-- Replace the "test" client-id value with your client-id -->
   <script src="https://www.paypal.com/sdk/js?client-id=ARaJ_-lZ2bImQWLMJIrYbZu5_n1Vf0uF6ClGgqduTPpf3uRk3NqMH-BU94qh1DQG1a06xZb6fPQt7RDF&currency=MXN"></script>
   <!--Link hacia los css correspondientes-->
-  
-  <link rel="stylesheet" href="css\styles.css"> 
+
+  <link rel="stylesheet" href="css\styles.css">
   <title>Tecno-Total</title>
 </head>
 
 <body>
-<!--Aqui pego los archivos completos de la libreria de Boostrap-->
+  <!--Aqui pego los archivos completos de la libreria de Boostrap-->
 
   <header>
     <?php
@@ -55,20 +55,28 @@ require('models/user/purchase_history.php');
       list_cart();
     } else if (isset($_GET['pay'])) {
       pay();
-    } else if(isset($_GET['cart_off'])){
+    } else if (isset($_GET['cart_off'])) {
       sign_off_cart();
-    }else if(isset($_GET['add'])){
+    } else if (isset($_GET['add'])) {
       add_products();
-    }else if(isset($_GET['delete'])){
+    } else if (isset($_GET['delete'])) {
       delete_product();
-    }else if(isset($_GET['update'])){
+    } else if (isset($_GET['update'])) {
       update_product();
-    }else if(isset($_GET['administrator_history'])){
+    } else if (isset($_GET['administrator_history'])) {
       pay_history_administrator();
-    }else if(isset($_GET['purchase_history'])){
+    } else if (isset($_GET['purchase_history'])) {
       purchase_history();
-    }else{
-      browse_products();
+    } else {
+    ?>
+    <!--se aplica la div con class row para organizarlo en un solo esquema de las cartas-->
+      <div class="row">
+        <?php
+        browse_products();
+        ?>
+      </div>
+    <?php
+
     }
     ?>
   </main>

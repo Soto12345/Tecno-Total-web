@@ -70,11 +70,11 @@ function browse_products()
 
 <!--TODO: Tratar de acomodar bien las cards-->
 
-    <div class="col-sm-6">
-        <div class="card" style="width: 18rem;">
+    <div class="col-md-4">
+        <div class="card">
             <br>
             <h3 class="card-title"><?php echo $product_name ?></h3>
-            <img src="<?php echo $product_image ?>" width="150" height="150" >
+            <img class="card-img-top" src="<?php echo $product_image ?>" width="100" height="200" >
                 <div class="card-body" >
                     <p class="card-text"><?php echo $product_description ?></p>
                     <p class = "card-text">Stock: <?php echo $product_stock?></p>
