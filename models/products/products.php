@@ -68,7 +68,7 @@ function browse_products()
 ?>
 
 
-<!--TODO: Tratar de poner bien las productCards-->
+<!--TODO: Tratar de poner bien las cards-->
 <div class="container py-1">
     <div class="col">
         <div class="card">
@@ -80,7 +80,7 @@ function browse_products()
                     <p class = "card-text">Stock: <?php echo $product_stock?></p>
                 </div>
                 <div class="mb-1 d-flex justify-content-around">
-                    <h5><?php echo $product_price ?></h5>
+                    <h5>Precio: $<?php echo $product_price ?></h5>
                     <br>
                     <button class="btn btn-primary"><a href="index.php?Id=<?php echo $product_id; ?>&Token=<?php echo hash_hmac('sha256', $product_id, KEY_TOKEN); ?>">Detalles</a></button>
                 </div>

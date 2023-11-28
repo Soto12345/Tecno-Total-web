@@ -8,6 +8,7 @@
 }
 body{
     font-family: var(--sm-font);
+    background-image: url('https://cutewallpaper.org/22/black-and-blue-3d-cube-wallpapers/1032526166.jpg');
 }
 
 /* navbar (components) */
@@ -52,6 +53,7 @@ body{
     border: none;
 }
 h3,h5{
-    color: rgb(0, 91, 228);
+    color: rgb(9, 85, 238);
 }
 
+/*Hacer pagina de detalles*/
