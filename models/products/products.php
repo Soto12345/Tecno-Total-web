@@ -69,25 +69,18 @@ function browse_products()
 
 
 <!--TODO: Tratar de acomodar bien las cards-->
-
-    <div class="col-md-4">
-        <div class="card">
-            <br>
-            <h3 class="card-title"><?php echo $product_name ?></h3>
-            <img class="card-img-top" src="<?php echo $product_image ?>" width="100" height="200" >
-                <div class="card-body" >
-                    <p class="card-text"><?php echo $product_description ?></p>
-                    <p class = "card-text">Stock: <?php echo $product_stock?></p>
-                </div>
-                <div class="mb-1 d-flex justify-content-around">
-                    <h5>Precio: $<?php echo $product_price ?></h5>
-                    
-                    <button class="btn btn-info"><a href="index.php?Id=<?php echo $product_id; ?>&Token=<?php echo hash_hmac('sha256', $product_id, KEY_TOKEN); ?>">Detalles</a></button>
-                </div>
+<div class="col-md-3">
+    <div class="card">
+        <h3 class="card-title"><?php echo $product_name ?></h3>
+        <img class="img-fluid" src="<?php echo $product_image ?>">
+        <div class="card-body" >
+            <p class="card-text"><?php echo $product_description ?></p>
+            <p class = "card-text">Stock: <?php echo $product_stock?></p>
+            <h5>Precio: $<?php echo $product_price ?></h5>
+            <button style="background-color:black" class="btn"><a style="text-decoration:none" href="index.php?Id=<?php echo $product_id; ?>&Token=<?php echo hash_hmac('sha256', $product_id, KEY_TOKEN); ?>">Detalles</a></button>
         </div>
     </div>
-    <br>
-
+</div>
 
 <?php
         }

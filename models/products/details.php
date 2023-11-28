@@ -32,7 +32,7 @@ function details()
                 <div class="container mt-4">
     <div class="card">
         <div class="card-body">
-            <h2 class="card-subtitle mb-2 text-muted"><?php echo $product_name ?></h2>
+            <h2 class="card-subtitle mb-2"><?php echo $product_name ?></h2>
             <h5 class="card-title">ID producto: <?php echo $product_id ?></h5>
             <img src="<?php echo $product_image ?> " width="150" height="150" class="img-fluid" alt="<?php echo $product_name  ?>  ">
             <p class="card-text"><?php echo $product_description ?></p>
