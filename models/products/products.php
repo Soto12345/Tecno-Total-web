@@ -67,7 +67,6 @@ function browse_products()
             //cada vez que recorre un arreglo, los productos estaran en formato html
 ?>
 
-
 <!--TODO: Tratar de acomodar bien las cards-->
 <div class="col-md-3">
     <div class="card">
