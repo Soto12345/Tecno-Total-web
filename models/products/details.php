@@ -28,17 +28,24 @@ function details()
                 $product_category = $row['categoria'];
 ?>
 
-                <!--Aqui esta la parte de los detalles en HTML-->
-                <div class="container mt-4">
-    <div class="card">
-        <div class="card-body">
-            <h2 class="card-subtitle mb-2"><?php echo $product_name ?></h2>
-            <h5 class="card-title">ID producto: <?php echo $product_id ?></h5>
-            <img src="<?php echo $product_image ?> " width="150" height="150" class="img-fluid" alt="<?php echo $product_name  ?>  ">
-            <p class="card-text"><?php echo $product_description ?></p>
-            <p class="card-text"><strong>Category:</strong> <?php echo $product_category ?></p>
-            <p class="card-text"><strong>Price:</strong> <?php echo $product_price ?></p>
-            <p class="card-text"><strong>Stock:</strong> <?php echo $product_stock ?></p>
+<!--Aqui esta la parte de los detalles en HTML-->
+<div class="card">
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-3">
+                    <div class="product-image">
+                        <img src="<?php echo $product_image ?>" width="400" height="400" alt="<?php echo $product_name ?>">
+                    </div>
+                </div>
+            <div class="col-md-8">
+                <h2 class="card-title"><?php echo $product_name ?></h2>
+                <h5 class="card-title">ID producto: <?php echo $product_id ?></h5>
+                <p class="card-title"><?php echo $product_description ?></p>
+                <p class="card-title"><strong>Category:</strong> <?php echo $product_category ?></p>
+                <p class="card-title"><strong>Price:</strong> <?php echo $product_price ?></p>
+                <p class="card-title"><strong>Stock:</strong> <?php echo $product_stock ?></p>
+            
+            
 
             <?php if (!isset($_SESSION['usuario'])) { ?>
                 <form action="" method="post">
@@ -63,6 +70,7 @@ function details()
                     </form>
             <?php }
             } ?>
+            </div>
         </div>
     </div>
 </div>
