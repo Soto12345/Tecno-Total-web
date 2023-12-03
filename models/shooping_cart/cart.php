@@ -5,7 +5,7 @@
        <h1 class="text-white">LISTA DE COMPRAS:</h1>
        <?php if ((empty($_SESSION['CART']))) {
         ?>
-           <h2>No hay productos en el carrito</h2>
+           <h2 class="text-white">No hay productos en el carrito</h2>
        <?php
         } else {
         ?>
