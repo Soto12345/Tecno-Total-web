@@ -81,10 +81,20 @@ function login_user($email_user, $password_user)
                 $_SESSION['Tipo_usuario'] = $type_user;
                 header("location: ../../index.php");
             } else {
-                echo "usuario o contraseña incorrecta";
+                ?>
+                <script>
+                    alert("Usuario o contraseña incorrecta");
+                    location = "http://localhost/Tecno-Total-web/models/forms/login.html";
+                </script>
+                <?php
             }
         } else {
-            echo "este usuario no existe, favor de registrarse";
+            ?>
+            <script>
+                alert("Este usuario no existe, favor de registrarse");
+                location = "http://localhost/Tecno-Total-web/models/forms/Register.html";
+            </script>
+            <?php
         }
     } else {
         echo "Error de conexion";
