@@ -37,8 +37,6 @@ require('models/user/purchase_history.php');
 </head>
 
 <body>
-  <!--Aqui pego los archivos completos de la libreria de Boostrap-->
-
   <header>
     <?php
     user_verification();
