@@ -29,6 +29,7 @@ function details()
 ?>
 
 <!--Aqui esta la parte de los detalles en HTML-->
+<!--TODO: QUE EL BOTON LOGRE ALINEARSEEEEE-->
 <div class="card">
     <div class="container mt-4">
         <div class="row">
