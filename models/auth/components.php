@@ -114,7 +114,7 @@ function nav_with_user()
                 <li class="nav-item dropdown px-2 py-2">
                     <a class="nav-link dropdown-toggle text-uppercase text-white" href="#" id="navbarDropdownAdmin" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['usuario'] ?></a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="index.php?administrator_history=yes">Historial</a></li>
+                        <li><a class="dropdown-item" href="index.php?purchase_history=yes">Historial</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="models/user/sign_off.php">Cerrar sesion</a></li>
                     </ul>

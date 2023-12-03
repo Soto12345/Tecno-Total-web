@@ -65,3 +65,9 @@ body{
 }
 
 /*Hacer pagina de detalles*/
+
+/*alinear boton*/
+
+.form_details{
+    left:100px;
+}

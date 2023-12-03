@@ -17,7 +17,6 @@ function purchase_history()
                         <th>Cantidad</th>
                         <th>Monto</th>
                         <th>Fecha</th>
-                        <th>Acción</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -31,9 +30,6 @@ function purchase_history()
                         echo '<td>$' . $fila['monto'] . '</td>';
                         echo '<td>' . $fila['fecha'] . '</td>';
                     ?>
-                        <td>
-                            <a href="index.php?Comentary=<?php echo $product_name; ?>&Token=<?php echo hash_hmac('sha256', $product_name, KEY_TOKEN); ?>" class="btn btn-primary">Reseñar producto</a>
-                        </td>
                     <?php
                         echo "</tr>";
                         $total = $total + ($fila['monto'] * $fila['cantidad']);

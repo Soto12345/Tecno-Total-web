@@ -38,13 +38,11 @@ function details()
                         <img src="<?php echo $product_image ?>" width="400" height="400" alt="<?php echo $product_name ?>">
                     </div>
                 </div>
-            <div class="col-md-8">
+            <div class="col-md-8 text-center">
                 <h2 class="card-title"><?php echo $product_name ?></h2>
-                <h5 class="card-title">ID producto: <?php echo $product_id ?></h5>
                 <p class="card-title"><?php echo $product_description ?></p>
-                <p class="card-title"><strong>Category:</strong> <?php echo $product_category ?></p>
-                <p class="card-title"><strong>Price:</strong> <?php echo $product_price ?></p>
-                <p class="card-title"><strong>Stock:</strong> <?php echo $product_stock ?></p>
+                <p class="card-title"><strong>Categoria:</strong> <?php echo $product_category ?></p>
+                <p class="card-title"><strong>Precio:</strong> <?php echo $product_price ?></p>
             
             
 
