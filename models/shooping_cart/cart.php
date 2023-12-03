@@ -1,16 +1,17 @@
-   <?php
+<?php
     function list_cart()
     {
     ?>
-       <h1>LISTA DE COMPRAS:</h1>
+       <h1 class="text-white">LISTA DE COMPRAS:</h1>
        <?php if ((empty($_SESSION['CART']))) {
         ?>
            <h2>No hay productos en el carrito</h2>
        <?php
         } else {
         ?>
-           <table class="table table-height table-bordered">
-               <tbody>
+           <!-- Agrega la clase 'table' de Bootstrap y 'table-light' para el fondo blanco -->
+           <table class="table table-light table-bordered">
+               <thead>
                    <tr>
                        <th>Id</th>
                        <th>Nombre</th>
@@ -20,6 +21,8 @@
                        <th>Total</th>
                        <th>---</th>
                    </tr>
+               </thead>
+               <tbody>
                    <?php $total = 0; ?>
                    <?php foreach ($_SESSION['CART'] as $index => $product) { ?>
                        <tr>
@@ -47,12 +50,13 @@
                        </td>
                    </tr>
                    <tr>
-                       <td>
+                       <td colspan="7" class="text-right"> <!-- Utiliza la clase 'text-right' para alinear a la derecha -->
                            <?php
                             $usuarioSet = isset($_SESSION['usuario']);
                             $href = $usuarioSet ? "index.php?pay=yes" : "models/forms/login.html";
                             ?>
-                           <a href="<?php echo $href; ?>">PROCEDER A PAGAR</a>
+                           <!-- Agrega la clase 'btn' y 'btn-primary' para estilizar el botón -->
+                           <a href="<?php echo $href; ?>" class="btn btn-primary">PROCEDER A PAGAR</a>
                        </td>
                    </tr>
                </tbody>
