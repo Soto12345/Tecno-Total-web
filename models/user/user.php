@@ -48,13 +48,13 @@ function register_user($email_user, $password_user)
     if ($result_verification) {
         //se verifica si el mismo correo ya ha sido registrado anteriormente
         if (mysqli_num_rows($result_verification)) {
-            echo "Correo ya existente";
+            echo "correo ya existente";
             $connection->Close_connection();
         } else {
             //se registra el usuario si se encuentra que no ha sido registrado
-            $result_insert = $connection->run_query($sql_insert);
+            $connection->run_query($sql_insert);
             $connection->Close_connection();
-            return $result_insert;
+            header('location: ../forms/login.html');
         }
     } else {
         echo "error en la conexion";
